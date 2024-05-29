@@ -18,7 +18,7 @@ public class GenericAppDBContext:DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(@"Data Source=66.175.233.172;Initial Catalog=genericApp;User=sa;password=<YourStrong@Passw0rd>;");
+        optionsBuilder.UseSqlServer(@"Server=tcp:advincula-server.database.windows.net,1433;Initial Catalog=advinculaDB;Persist Security Info=False;User ID=Bewjodvmb1;Password=Bewjodvmb*1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
     }
 
 }

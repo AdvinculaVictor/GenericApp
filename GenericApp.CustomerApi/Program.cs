@@ -51,12 +51,12 @@ builder.Services.AddSwaggerGen(
                     TokenUrl = new Uri("https://login.microsoftonline.com/33444707-653e-4367-bb8b-1ed2685b6b7c/oauth2/v2.0/token"),
                     Scopes = new Dictionary<string, string> {
                         {
-                            "api://c90b59f4-6807-4cb8-852d-f5ac64367895/Customers.Read",
+                            "api://dc134f9f-2847-4724-a462-9fbcc0b6f9cf/Customers.Read",
                             "Reads the Customers"
                         },
                         {
-                            "api://c90b59f4-6807-4cb8-852d-f5ac64367895/Facturacion",
-                            "Facturación"
+                            "api://dc134f9f-2847-4724-a462-9fbcc0b6f9cf/Customers.Write",
+                            "Writes the Customers"
                         }
                     }
                 }

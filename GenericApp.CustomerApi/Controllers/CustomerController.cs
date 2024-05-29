@@ -22,13 +22,13 @@ namespace GenericApp.CustomerApi.Controllers
             this.unitOfWork = unitOfWork;
         }
 
-        [HttpGet,Authorize(Roles="Reader,Writer")]
+        [HttpGet,Authorize(Roles="Readers,Writers")]
         public ActionResult<IEnumerable<Cliente>> GetAll()
         {
             return unitOfWork.Cliente.GetAll().ToList();
         }
 
-        [HttpGet("{id:int}"), Authorize(Roles="Writer,Reader")]
+        [HttpGet("{id:int}"), Authorize(Roles="Readers,Writers")]
         public ActionResult<Cliente> GetCustomer(int id)
         {
             try
@@ -46,7 +46,7 @@ namespace GenericApp.CustomerApi.Controllers
             }
         }
 
-    [HttpPost, Authorize(Roles = "Writer")]
+    [HttpPost, Authorize(Roles = "Writers")]
     public ActionResult<Cliente> CreateCustomer(Cliente cliente)
     {
         try
@@ -65,7 +65,7 @@ namespace GenericApp.CustomerApi.Controllers
         }
     }    
 
-    [HttpPut("{id:int}"),Authorize(Roles ="Writer")]
+    [HttpPut("{id:int}"),Authorize(Roles ="Writers")]
     public ActionResult<Cliente> UpdateCustomer(int id, Cliente cliente)
     {
         try
@@ -99,7 +99,7 @@ namespace GenericApp.CustomerApi.Controllers
         }
     }    
 
-[HttpDelete("{id:int}"), Authorize(Roles ="Writer")]
+[HttpDelete("{id:int}"), Authorize(Roles ="Writers")]
     public ActionResult<Cliente> DeleteCliente(int id)
     {
         try
