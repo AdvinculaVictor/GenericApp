@@ -51,8 +51,12 @@ builder.Services.AddSwaggerGen(
                     TokenUrl = new Uri("https://login.microsoftonline.com/33444707-653e-4367-bb8b-1ed2685b6b7c/oauth2/v2.0/token"),
                     Scopes = new Dictionary<string, string> {
                         {
-                            "api://bb68d724-0fe2-45c0-a2f4-5db6bbc3a71b/OrderDetail.Management",
-                            "Order details management"
+                            "api://e9ab60c0-7307-4529-8858-9760fc4e6322/OrderDetails.Read",
+                            "Order details reading"
+                        },
+                                                {
+                            "api://e9ab60c0-7307-4529-8858-9760fc4e6322/OrderDetails.Write",
+                            "Order details writing"
                         }
                     }
                 }

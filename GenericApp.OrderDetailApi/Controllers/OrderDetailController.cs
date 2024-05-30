@@ -22,13 +22,13 @@ public class OrderDetailController : ControllerBase
         this.unitOfWork = unitOfWork;
     }
 
-        [HttpGet,Authorize(Roles="Reader,Writer")]
+        [HttpGet,Authorize(Roles="OrderDetails.Reader,OrderDetails.Writer")]
         public ActionResult<IEnumerable<PedidoDetalle>> GetAll()
         {
             return unitOfWork.PedidoDetalle.GetAll().ToList();
         }
 
-        [HttpGet("{id:int}"), Authorize(Roles="Writer,Reader")]
+        [HttpGet("{id:int}"), Authorize(Roles="OrderDetails.Reader,OrderDetails.Writer")]
         public ActionResult<PedidoDetalle> GetOrderDetail(int id)
         {
             try
@@ -46,7 +46,7 @@ public class OrderDetailController : ControllerBase
             }
         }
 
-    [HttpPost, Authorize(Roles = "Writer")]
+    [HttpPost, Authorize(Roles = "OrderDetails.Writer")]
     public ActionResult<PedidoDetalle> CreateOrderDetail(PedidoDetalle PedidoDetalle)
     {
         try
@@ -65,7 +65,7 @@ public class OrderDetailController : ControllerBase
         }
     }    
 
-    [HttpPut("{id:int}"),Authorize(Roles ="Writer")]
+    [HttpPut("{id:int}"),Authorize(Roles ="OrderDetails.Writer")]
     public ActionResult<PedidoDetalle> UpdatePedidoDetalle(int id, PedidoDetalle PedidoDetalle)
     {
         try
@@ -94,7 +94,7 @@ public class OrderDetailController : ControllerBase
         }
     }    
 
-    [HttpDelete("{id:int}"), Authorize(Roles ="Writer")]
+    [HttpDelete("{id:int}"), Authorize(Roles ="OrderDetails.Writer")]
     public ActionResult<PedidoDetalle> DeletePedidoDetalle(int id)
     {
         try
