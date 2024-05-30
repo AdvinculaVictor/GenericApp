@@ -22,13 +22,13 @@ namespace GenericApp.ProductApi.Controllers
             this.unitOfWork = unitOfWork;
         }
 
-        [HttpGet,Authorize(Roles="Reader,Writer")]
+        [HttpGet,Authorize(Roles="Readers,Writers")]
         public ActionResult<IEnumerable<Producto>> GetAll()
         {
             return unitOfWork.Producto.GetAll().ToList();
         }
 
-        [HttpGet("{id:int}"), Authorize(Roles="Writer,Reader")]
+        [HttpGet("{id:int}"), Authorize(Roles="Readers,Writers")]
         public ActionResult<Producto> GetProduct(int id)
         {
             try
@@ -46,7 +46,7 @@ namespace GenericApp.ProductApi.Controllers
             }
         }
 
-    [HttpPost, Authorize(Roles = "Writer")]
+    [HttpPost, Authorize(Roles="Writers")]
     public ActionResult<Producto> CreateProduct(Producto producto)
     {
         try
@@ -65,7 +65,7 @@ namespace GenericApp.ProductApi.Controllers
         }
     }    
 
-    [HttpPut("{id:int}"),Authorize(Roles ="Writer")]
+    [HttpPut("{id:int}"),Authorize(Roles ="Writers")]
     public ActionResult<Producto> UpdateProduct(int id, Producto producto)
     {
         try
@@ -96,7 +96,7 @@ namespace GenericApp.ProductApi.Controllers
         }
     }    
 
-[HttpDelete("{id:int}"), Authorize(Roles ="Writer")]
+[HttpDelete("{id:int}"), Authorize(Roles ="Writers")]
     public ActionResult<Producto> DeleteProduct(int id)
     {
         try

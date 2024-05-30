@@ -30,7 +30,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       builder =>
                       {
-                          builder.WithOrigins("https://storeappng.azurewebsites.net",
+                          builder.WithOrigins("https://advinculaproductapi.azurewebsites.net",
                                               "http://localhost:4200");
                       });
 });
@@ -51,12 +51,12 @@ builder.Services.AddSwaggerGen(
                     TokenUrl = new Uri("https://login.microsoftonline.com/33444707-653e-4367-bb8b-1ed2685b6b7c/oauth2/v2.0/token"),
                     Scopes = new Dictionary<string, string> {
                         {
-                            "api://32cb17e6-864a-4302-8aa6-67522aa97e2a/ReadAccess",
-                            "Reads the Product list"
+                            "api://6c91fd07-2695-4303-a214-de6d178be33e/Products.Read",
+                            "Reads product data"
                         },
                         {
-                            "api://32cb17e6-864a-4302-8aa6-67522aa97e2a/Products.Write",
-                            "Writes product"
+                            "api://6c91fd07-2695-4303-a214-de6d178be33e/Products.Write",
+                            "Writes product data"
                         }
                     }
                 }
@@ -116,7 +116,7 @@ if (app.Environment.IsDevelopment())
                 options.PreSerializeFilters.Add((swagger, httpReq) =>
                 {
                     var scheme = "https";
-                    swagger.Servers = new List<OpenApiServer>() {new OpenApiServer() {Url = $"{scheme}://advinculacustomerapi.azurewebsites.net{httpReq.PathBase}"}};
+                    swagger.Servers = new List<OpenApiServer>() {new OpenApiServer() {Url = $"{scheme}://advinculaproductapi.azurewebsites.net{httpReq.PathBase}"}};
                 });
             }); 
 

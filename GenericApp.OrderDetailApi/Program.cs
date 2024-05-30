@@ -30,7 +30,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       builder =>
                       {
-                          builder.WithOrigins("https://storeappng.azurewebsites.net",
+                          builder.WithOrigins("https://advinculaorderdetailapi.azurewebsites.net",
                                               "http://localhost:4200");
                       });
 });
@@ -112,7 +112,7 @@ if (app.Environment.IsDevelopment())
                 options.PreSerializeFilters.Add((swagger, httpReq) =>
                 {
                     var scheme = "https";
-                    swagger.Servers = new List<OpenApiServer>() {new OpenApiServer() {Url = $"{scheme}://advinculacustomerapi.azurewebsites.net{httpReq.PathBase}"}};
+                    swagger.Servers = new List<OpenApiServer>() {new OpenApiServer() {Url = $"{scheme}://advinculaorderdetailapi.azurewebsites.net{httpReq.PathBase}"}};
                 });
             }); 
     app.UseHttpsRedirection();
