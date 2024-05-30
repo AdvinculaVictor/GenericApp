@@ -116,7 +116,7 @@ if (app.Environment.IsDevelopment())
                 options.PreSerializeFilters.Add((swagger, httpReq) =>
                 {
                     var scheme = "https";
-                    swagger.Servers = new List<OpenApiServer>() {new OpenApiServer() {Url = $"{scheme}://victoradvincula.info{httpReq.PathBase}"}};
+                    swagger.Servers = new List<OpenApiServer>() {new OpenApiServer() {Url = $"{scheme}://advinculacustomerapi.azurewebsites.net{httpReq.PathBase}"}};
                 });
             }); 
     app.UseHttpsRedirection();
