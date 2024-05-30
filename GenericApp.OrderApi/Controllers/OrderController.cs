@@ -22,13 +22,13 @@ public class OrderController : ControllerBase
         this.unitOfWork = unitOfWork;
     }
 
-        [HttpGet,Authorize(Roles="Reader,Writer")]
+        [HttpGet,Authorize(Roles="Order.Readers,Order.Writers")]
         public ActionResult<IEnumerable<Pedido>> GetAll()
         {
             return unitOfWork.Pedido.GetAll().ToList();
         }
 
-        [HttpGet("{id:int}"), Authorize(Roles="Writer,Reader")]
+        [HttpGet("{id:int}"), Authorize(Roles="Writers,Readers")]
         public ActionResult<Pedido> GetOrder(int id)
         {
             try
@@ -46,7 +46,7 @@ public class OrderController : ControllerBase
             }
         }
 
-    [HttpPost, Authorize(Roles = "Writer")]
+    [HttpPost, Authorize(Roles = "Writers")]
     public ActionResult<Pedido> CreateOrder(Pedido pedido)
     {
         try
@@ -65,7 +65,7 @@ public class OrderController : ControllerBase
         }
     }    
 
-    [HttpPut("{id:int}"),Authorize(Roles ="Writer")]
+    [HttpPut("{id:int}"),Authorize(Roles ="Writers")]
     public ActionResult<Pedido> UpdatePedido(int id, Pedido pedido)
     {
         try
@@ -91,7 +91,7 @@ public class OrderController : ControllerBase
         }
     }    
 
-    [HttpDelete("{id:int}"), Authorize(Roles ="Writer")]
+    [HttpDelete("{id:int}"), Authorize(Roles ="Writers")]
     public ActionResult<Pedido> DeletePedido(int id)
     {
         try
