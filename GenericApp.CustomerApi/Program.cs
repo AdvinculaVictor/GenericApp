@@ -31,7 +31,7 @@ builder.Services.AddCors(options =>
                       builder =>
                       {
                           builder.WithOrigins("https://advinculacustomerapi.azurewebsites.net",
-                                              "http://localhost:4200");
+                                              "http://localhost:5069");
                       });
 });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
