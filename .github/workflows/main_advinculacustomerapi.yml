@@ -7,6 +7,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - GenericApp.CustomerApi/**
   workflow_dispatch:
 
 jobs:
