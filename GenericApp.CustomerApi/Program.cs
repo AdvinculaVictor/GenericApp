@@ -30,7 +30,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       builder =>
                       {
-                          builder.WithOrigins("https://storeappng.azurewebsites.net",
+                          builder.WithOrigins("https://advinculacustomerapi.azurewebsites.net",
                                               "http://localhost:4200");
                       });
 });
