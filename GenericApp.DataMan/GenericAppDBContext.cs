@@ -21,5 +21,12 @@ public class GenericAppDBContext:DbContext
         optionsBuilder.UseSqlServer(@"Server=tcp:advincula-server.database.windows.net,1433;Initial Catalog=advinculaDB;Persist Security Info=False;User ID=Bewjodvmb1;Password=Bewjodvmb*1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
     }
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Cliente>().Navigation(e => e.Pedidos).AutoInclude();
+        modelBuilder.Entity<Pedido>().Navigation(p => p.PedidoDetalles).AutoInclude();
+        modelBuilder.Entity<PedidoDetalle>().Navigation(pd => pd.Producto).AutoInclude();
+    }
+
 }
 }
