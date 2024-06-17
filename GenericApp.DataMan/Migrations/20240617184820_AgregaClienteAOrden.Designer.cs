@@ -4,14 +4,16 @@ using GenericApp.DataMan;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GenericApp.DataMan.Migrations
 {
     [DbContext(typeof(GenericAppDBContext))]
-    partial class GenericAppDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240617184820_AgregaClienteAOrden")]
+    partial class AgregaClienteAOrden
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
