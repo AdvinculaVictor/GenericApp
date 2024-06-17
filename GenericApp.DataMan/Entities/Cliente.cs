@@ -11,7 +11,7 @@ namespace GenericApp.DataMan.Entities
     {
         [Key]
         public int ClienteId { get; set; }
-        public string RazonSocial { get; set; }
+        public string? RazonSocial { get; set; }
         public string? Calle { get; set; }
         public string? Colonia { get; set; }
         public string? Municipio { get; set; }

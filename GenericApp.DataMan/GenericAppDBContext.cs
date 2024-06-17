@@ -25,6 +25,7 @@ public class GenericAppDBContext:DbContext
     {
         modelBuilder.Entity<Cliente>().Navigation(e => e.Pedidos).AutoInclude();
         modelBuilder.Entity<Pedido>().Navigation(p => p.PedidoDetalles).AutoInclude();
+        modelBuilder.Entity<Pedido>().Navigation(p => p.Cliente).AutoInclude();
         modelBuilder.Entity<PedidoDetalle>().Navigation(pd => pd.Producto).AutoInclude();
     }
 

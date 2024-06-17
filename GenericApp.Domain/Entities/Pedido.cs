@@ -13,6 +13,7 @@ namespace GenericApp.Domain.Entities
         [Key]
         public int PedidoId { get; set; }
         public int ClienteId { get; set; }
+        public Cliente? Cliente { get; set; }
         public DateTime FechaPedido { get; set; }
         public List<PedidoDetalle>? PedidoDetalles { get; set; }
     }

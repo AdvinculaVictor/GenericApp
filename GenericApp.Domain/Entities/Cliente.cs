@@ -13,7 +13,7 @@ namespace GenericApp.Domain.Entities
         public int ClienteId { get; set; }
         [Column(TypeName = "VARCHAR")]
         [StringLength(250)]
-        public string RazonSocial { get; set; }
+        public string? RazonSocial { get; set; }
         [Column(TypeName = "VARCHAR")]
         [StringLength(100)]
         public string? Calle { get; set; }
